@@ -1,0 +1,61 @@
+<%- include('../common/header'); -%>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Profile</h4>
+                    <form class="form ajax-form" method="post" action="/profile/update/<%= user._id %>">
+                        <div class="form-group">
+                            <label>URL</label>
+                            <input class="form-control" placeholder="URL" value="<%= url %>" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input class="form-control" placeholder="Name" value="<%= user.name %>" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input class="form-control" placeholder="User Name" value="<%= user.username %>" disabled>
+                        </div>
+                        <div class="form-group toggle-password">
+                            <label for="inputPassword">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" autocomplete="off" value="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>
+                        </div>
+                        <div class="form-group toggle-password">
+                            <label for="inputApiKey">ApiKey</label>
+                            <input type="password" class="form-control" id="inputApiKey" name="apiKey" placeholder="Api Key" autocomplete="off" value="<%= user.apiKey %>">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>
+                        </div>
+                        <div class="form-group toggle-password">
+                            <label for="inputApiSecret">ApiSecret</label>
+                            <input type="password" class="form-control" id="inputApiSecret" name="apiSecret" placeholder="Api Secret" autocomplete="off" value="<%= user.apiSecret %>">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputScale">Scale</label>
+                            <input type="text" class="form-control" id="inputScale" name="scale" placeholder="Scale" autocomplete="off" value="<%= user.scale %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputRiskLevel1">Risk Level 1</label>
+                            <input type="text" class="form-control" id="inputRiskLevel1" name="riskLevel1" placeholder="Risk Level 1" autocomplete="off" value="<%= user.riskLevel1 %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputRiskLevel2">Risk Level 2</label>
+                            <input type="text" class="form-control" id="inputRiskLevel2" name="riskLevel2" placeholder="Risk Level 2" autocomplete="off" value="<%= user.riskLevel2 %>">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-sm btn-warning">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+<%- include('../common/footer'); -%>

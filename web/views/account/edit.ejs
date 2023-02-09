@@ -1,0 +1,73 @@
+<%- include('../common/header'); -%>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Edit Account</h4>
+                    <form class="form ajax-form" method="post" action="/account/update/<%= item._id %>">
+                        <div class="form-group">
+                            <label for="inputName">Name</label>
+                            <input class="form-control" id="inputName" name="name" placeholder="Name" autocomplete="off" value="<%= item.name %>" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputUserName">Username</label>
+                            <input class="form-control" id="inputUserName" name="username" placeholder="User Name" autocomplete="off" value="<%= item.username %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputRole">Role</label>
+                            <select class="form-control select2" id="inputRole" name="role" placeholder="Role" data-placeholder="Role" style="width: 100%;">
+                                <option></option>
+                                <option value="User"<% if (item.role == "User") { %> selected<% } %>>User</option>
+                                <option value="Admin"<% if (item.role == "Admin") { %> selected<% } %>>Admin</option>
+                            </select>
+                        </div>
+                        <div class="form-group toggle-password">
+                            <label for="inputPassword">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" autocomplete="off" value="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>
+                        </div>
+                        <div class="form-group toggle-password">
+                            <label for="inputApiKey">ApiKey</label>
+                            <input type="password" class="form-control" id="inputApiKey" name="apiKey" placeholder="Api Key" autocomplete="off" value="<%= item.apiKey %>">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>
+                        </div>
+                        <div class="form-group toggle-password">
+                            <label for="inputApiSecret">ApiSecret</label>
+                            <input type="password" class="form-control" id="inputApiSecret" name="apiSecret" placeholder="Api Secret" autocomplete="off" value="<%= item.apiSecret %>">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputScale">Scale</label>
+                            <input type="text" class="form-control" id="inputScale" name="scale" placeholder="Scale" autocomplete="off" value="<%= item.scale %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputRiskLevel1">Risk Level 1</label>
+                            <input type="text" class="form-control" id="inputRiskLevel1" name="riskLevel1" placeholder="Risk Level 1" autocomplete="off" value="<%= item.riskLevel1 %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputRiskLevel2">Risk Level 2</label>
+                            <input type="text" class="form-control" id="inputRiskLevel2" name="riskLevel2" placeholder="Risk Level 2" autocomplete="off" value="<%= item.riskLevel2 %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputStatus">Status</label>
+                            <select class="form-control select2" id="inputStatus" name="status" placeholder="Status" data-placeholder="Status" style="width: 100%;">
+                                <option></option>
+                                <option value="Enable"<% if (item.status == "Enable") { %> selected<% } %>>Enable</option>
+                                <option value="Disable"<% if (item.status == "Disable") { %> selected<% } %>>Disable</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-sm btn-warning">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+<%- include('../common/footer'); -%>

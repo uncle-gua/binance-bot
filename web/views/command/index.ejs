@@ -1,0 +1,58 @@
+<%- include('../common/header'); -%>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Command</h4>
+                    <div class="table<% if (items.length == 0) { %> mb-0<% } %>">
+                        <div class="thead">
+                            <div class="tr">
+                                <div class="th">Action</div>
+                                <div class="th">Symbol</div>
+                                <div class="th">Side</div>
+                                <div class="th">Quantity</div>
+                                <div class="th">Scale</div>
+                                <div class="th">Comment</div>
+                                <div class="th">Status</div>
+                                <div class="th">Reason</div>
+                                <div class="th">Time</div>
+                            </div>
+                        </div>
+                        <div class="tbody"><% items.forEach(function(item) { %>
+                            <div class="tr">
+                                <div class="td" data-title="Action"><%= item.action %></div>
+                                <div class="td" data-title="Symbol"><%= item.symbol %></div>
+                                <div class="td" data-title="Side"><%= item.side %></div>
+                                <div class="td" data-title="Quantity"><%= item.quantity %></div>
+                                <div class="td" data-title="Scale"><%= item.scale %></div>
+                                <div class="td" data-title="Comment"><%= item.comment %></div>
+                                <div class="td<%= item.status == 'FAILED' ? ' text-danger' : item.status == 'SUCCESS' ? ' text-success' : '' %>" data-title="Status"><%= item.status %></div>
+                                <div class="td" data-title="Reason"><%= item.reason %></div>
+                                <div class="td" data-title="Time"><%= moment(new Date(item.createdAt)).format('YYYY-MM-DD HH:mm:ss') %></div>
+                            </div><% }); %>
+                        </div>
+                    </div><% if (items.length == 0) { %>
+                    <div class="tfoot">No Data</div><% } %>
+                    <nav aria-label="Page navigation"><% let p = page - 1; c = Math.ceil(count / limit); let b = -1; let e = -1; if (p - 2 >= 0) {b = p - 2; if (p + 2 > c -1) {e = c - 1;} else {e = p + 2}} else {b = 0; e = 4;} e = e + 1; e = e > c ? c : e; %>
+                        <ul class="pagination pagination-sm">
+                            <li class="page-item<% if (p === 0 || count <= 0) { %> disabled<% } %>">
+                                <a class="page-link" aria-label="Previous"<% if (p > 0 && count > 0) { %>  href="/command?page=<%= p %>"<% } %>>
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li><% if (b == 0 && e == 0) { %>
+                            <li class="page-item active"><a class="page-link" href="/command?page=1">1</a></li><% } %><% if (b > 0) { %>
+                            <li class="page-item"><a class="page-link" href="/command?page=1">1</a></li><% } %><% if (b > 1) { %>
+                            <li class="page-item disabled"><a class="page-link" aria-label="">...</a></li><% } %><% for (var i = b; i < e; i++) { %>
+                            <li class="page-item<% if (p == i) { %> active<% } %>"<% if (p == i) { %> aria-current="page"<% } %>>
+                                <a class="page-link" href="/command?page=<%= i + 1 %>"><%= i + 1 %></a>
+                            </li><% } %><% if (e < c - 1) { %>
+                            <li class="page-item disabled"><a class="page-link" aria-label="">...</a></li><% } %><% if (e < c) { %>
+                            <li class="page-item"><a class="page-link" href="/command?page=<%= c %>"><%= c %></a></li><% } %>
+                            <li class="page-item<% if (p === c - 1 || count <= 0) { %> disabled <% } %>">
+                                <a class="page-link" aria-label="Next"<% if (p < c - 1 && count > 0) { %>  href="/command?page=<%= p + 2 %>"<% } %>>
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+<%- include('../common/footer'); -%>

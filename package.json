@@ -1,0 +1,36 @@
+{
+  "name": "trading-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uncle-gua/trading-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uncle-gua/trading-bot/issues"
+  },
+  "homepage": "https://github.com/uncle-gua/trading-bot#readme",
+  "dependencies": {
+    "captchapng": "^0.0.1",
+    "ejs": "^3.1.6",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^10.1.1",
+    "koa-session2": "^2.2.10",
+    "koa-static-cache": "^5.1.4",
+    "koa-views": "^8.0.0",
+    "log4js": "^6.3.0",
+    "moment": "^2.29.1",
+    "mongoose": "^6.1.7",
+    "nanoid": "^3.3.4",
+    "node-binance-api": "^0.13.1",
+    "querystring": "^0.2.1"
+  }
+}

@@ -1,0 +1,21 @@
+<%- include('../common/header'); -%>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Config</h4>
+                    <form class="form ajax-form" method="post" action="/config/update">
+                        <div class="form-group">
+                            <label>Site Name</label>
+                            <input class="form-control" name="siteName" placeholder="Site Name" value="<%= config.siteName %>">
+                        </div>
+                        <div class="form-group">
+                            <label>Server Name</label>
+                            <input class="form-control" name="serverName" placeholder="Server Name" value="<%= config.serverName %>">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-sm btn-warning">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+<%- include('../common/footer'); -%>
