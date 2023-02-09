@@ -15,7 +15,7 @@ const logger = require('./lib/logger');
         await db.connect();
         await system.init();
         await symbols.init();
-        await web.start(80);
+        await web.start(3000);
     } catch (err) {
         logger.fatal(err);
     }

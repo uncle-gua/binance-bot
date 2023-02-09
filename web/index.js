@@ -33,7 +33,8 @@ const web = {
                 port = port ? port : 80;
 
                 const app = new Koa({
-                    env: 'product'
+                    env: 'product',
+                    proxy: true
                 });
 
                 app.use(recover);
