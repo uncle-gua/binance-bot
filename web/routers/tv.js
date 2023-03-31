@@ -17,7 +17,7 @@ const errorHandler = err => {
 const trimSymbol = symbol => {
     let n = symbol.split(":");
     symbol = n.length > 1 ? n[1] : n[0];
-    symbol = symbol.substr('-4').toUpperCase() == 'PERP' ? symbol.substr(0, symbol.length -4) : symbol;
+    symbol = symbol.substr('-2').toUpperCase() == '.P' ? symbol.substr(0, symbol.length - 2) : symbol;
     return symbol.toUpperCase();
 }
 
