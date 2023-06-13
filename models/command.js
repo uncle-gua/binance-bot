@@ -9,8 +9,8 @@ const Command = new Schema({
     action:         {type: String, required: true, enum:['OPEN','CLOSE','INCR','DECR']},
     side:           {type: String, required: true, enum:['LONG','SHORT']},
     symbol:         {type: String, required: true},
+    size:           {type: Number, required: true},
     quantity:       {type: Number, required: true},
-    scale:          {type: Number, required: true},
     comment:        {type: String},
     status:         {type: String, required: true, default: 'NEW', enum:['NEW','SUCCESS','FAILED']},
     reason:         {type: String, default: ''}

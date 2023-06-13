@@ -28,15 +28,15 @@ tv.post('/:token', async (ctx) => {
             throw "Invalid user id";
         }
         let userId = user._id;
-        let { action, symbol, side, quantity, comment } = ctx.request.body;
+        let { action, symbol, side, size, comment } = ctx.request.body;
         symbol = symbol ? trimSymbol(symbol) : symbol;
         const command = new models.Command({
             userId,
             action,
             symbol,
             side,
-            quantity: quantity * user.scale,
-            scale: user.scale,
+            size,
+            quantity: size * user.scale,
             comment
         });
         command.save().then((command) => {
