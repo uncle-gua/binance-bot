@@ -8,8 +8,8 @@
                                 <div class="th">Action</div>
                                 <div class="th">Symbol</div>
                                 <div class="th">Side</div>
+                                <div class="th">Size</div>
                                 <div class="th">Quantity</div>
-                                <div class="th">Scale</div>
                                 <div class="th">Comment</div>
                                 <div class="th">Status</div>
                                 <div class="th">Reason</div>
@@ -21,8 +21,7 @@
                                 <div class="td" data-title="Action"><%= item.action %></div>
                                 <div class="td" data-title="Symbol"><%= item.symbol %></div>
                                 <div class="td" data-title="Side"><%= item.side %></div>
-                                <div class="td" data-title="Quantity"><%= item.quantity %></div>
-                                <div class="td" data-title="Scale"><%= item.scale %></div>
+                                <div class="td" data-title="Size"><%= item.size %></div>                                
                                 <div class="td" data-title="Comment"><%= item.comment %></div>
                                 <div class="td<%= item.status == 'FAILED' ? ' text-danger' : item.status == 'SUCCESS' ? ' text-success' : '' %>" data-title="Status"><%= item.status %></div>
                                 <div class="td" data-title="Reason"><%= item.reason %></div>
