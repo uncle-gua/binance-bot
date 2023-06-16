@@ -19,6 +19,7 @@
   "dependencies": {
     "captchapng": "^0.0.1",
     "ejs": "^3.1.6",
+    "fast-xml-parser": "^4.2.4",
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",
